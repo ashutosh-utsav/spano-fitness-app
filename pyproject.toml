@@ -1,0 +1,14 @@
+[project]
+name = "spano-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "fastapi>=0.116.1",
+    "pydantic>=2.11.7",
+    "python-jose[cryptography]>=3.5.0",
+    "sqlalchemy>=2.0.42",
+    "uvicorn[standard]>=0.35.0",
+]
