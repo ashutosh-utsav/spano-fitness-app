@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up - Spano Fitness{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+        <div class="card mt-5 mb-5">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">Create Your Account</h3>
+
+                {% if request.query_params.get('error') %}
+                <div class="alert alert-danger" role="alert">
+                    {{ request.query_params.get('error') }}
+                </div>
+                {% endif %}
+
+                <form action="/signup" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select class="form-select" id="gender" name="gender" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="weight" class="form-label">Weight (kg)</label>
+                            <input type="number" step="0.1" class="form-control" id="weight" name="weight" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="height" class="form-label">Height (cm)</label>
+                            <input type="number" step="0.1" class="form-control" id="height" name="height" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="goal" class="form-label">Primary Goal</label>
+                        <input type="text" class="form-control" id="goal" name="goal" placeholder="e.g., Weight Loss, Muscle Gain" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </div>
+                </form>
+                <div class="text-center mt-3">
+                    <small>Already have an account? <a href="/login">Log In</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
