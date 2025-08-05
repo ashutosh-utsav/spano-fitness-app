@@ -1,5 +1,8 @@
 # Spano AI Fitness Tracker
 
+### The Project is deployed and live at - https://spano.chagadiye.xyz/login
+## Live-Link - [Live-link-for-app](https://spano.chagadiye.xyz/login)  
+
 A **full-stack web application** built with **FastAPI** that serves as your **personal fitness and nutrition tracker**. Spano allows users to sign up, log their meals, and monitor their nutritional intake relative to their Basal Metabolic Rate (BMR). 
 
 It also features a **secure authentication system**, distinct **user and admin roles**, and an **AI-powered nutrition assistant** to provide personalized advice.
