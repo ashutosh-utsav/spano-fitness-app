@@ -1,0 +1,14 @@
+services:
+  spano:
+    build: .
+    container_name: spano-fitness
+    ports:
+      - "8791:8000"
+    env_file:
+      - .env
+    volumes:
+      - sqlite-data:/app/db # SQLite file storage (db lives in /app/db or wherever it writes to)
+    restart: unless-stopped
+
+volumes:
+  sqlite-data:
